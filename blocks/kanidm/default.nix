@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -56,6 +57,10 @@
       networking.firewall.allowedTCPPorts = [
         636
         443
+      ];
+
+      environment.systemPackages = with pkgs; [
+        kanidm
       ];
 
       # make sure the certs are there before kanidm starts

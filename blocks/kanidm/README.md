@@ -1,3 +1,6 @@
-# kanidm
+# KanIDM Identity Provider
 
-Identity Provider
+## Options:
+- domain
+- package
+- role

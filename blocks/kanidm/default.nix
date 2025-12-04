@@ -43,7 +43,7 @@
       # enable kanidm service with config
       services.kanidm = {
         enableServer = true;
-        package = cfg-package;
+        package = lib.mkForce cfg-package;
         serverSettings = {
           domain = cfg-domain;
           origin = "https://login.${cfg-domain}";

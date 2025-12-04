@@ -12,7 +12,7 @@
       domain = {
         top-level = lib.mkOption {
           description = "Top level domain on which kanidm will work";
-          type = lib.types.string;
+          type = lib.types.str;
           default = "example.tld";
         };
       };

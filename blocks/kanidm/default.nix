@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ ];
+  imports = [ ./acme.nix ];
 
   options = {
     kanidm-block.options = {
@@ -35,7 +35,7 @@
 
   config =
     let
-      cfg-domain = config.kanidm-block.options.domain;
+      cfg-domain = config.kanidm-block.options.domain.top-level;
       cfg-package = config.kanidm-block.options.package;
       cfg-role = config.kanidm-block.options.role;
     in

@@ -10,7 +10,8 @@ kanidm-block.options.package = pkgs.kanidm_1_8;
 kanidm-block.options.role = "WriteReplica";
 ```
 
-This will spin up an KanIDM instance that is accesible on https://login.domain.tld with alternative names for:
+This will spin up an KanIDM instance that is accessible on
+[https://login.domain.tld with alternative names for]:
 
 - `login.domain.tld`
 - `auth.domain.tld`
@@ -19,7 +20,9 @@ This will spin up an KanIDM instance that is accesible on https://login.domain.t
 ## Requirements
 
 ### ACME
-To use this module, the generic settings for ACME need to be specified seprately for the certificate request to work. Example:
+
+To use this module, the generic settings for ACME need to be specified seprately
+for the certificate request to work. Example:
 
 ``` nix
 security.acme = {
@@ -34,7 +37,9 @@ security.acme = {
 ```
 
 ### Database mounted on external filesystem
-To place the kanidm database on an external volume, you can mount `/var/lib/kanidm` on an external mountpoint. NFS example:
+
+To place the kanidm database on an external volume,
+you can mount `/var/lib/kanidm` on an external mountpoint. NFS example:
 
 ``` nix
 fileSystems."/var/lib/kanidm" = {

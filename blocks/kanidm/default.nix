@@ -8,34 +8,36 @@
   imports = [ ];
 
   options = {
-    domain = {
-      top-level = lib.mkOption {
-        description = "Top level domain on which kanidm will work";
-        type = lib.types.str;
-        default = "example.tld";
+    kanidm-block.options = {
+      domain = {
+        top-level = lib.mkOption {
+          description = "Top level domain on which kanidm will work";
+          type = lib.types.str;
+          default = "example.tld";
+        };
       };
-    };
-    package = lib.mkOption {
-      description = "KanIDM package version";
-      type = lib.types.package;
-      default = "pkgs.kanidm_1_8";
-    };
-    role = lib.mkOption {
-      description = "The role of this server. This affects the replication relationship and thereby available features.";
-      default = "WriteReplica";
-      type = lib.types.enum [
-        "WriteReplica"
-        "WriteReplicaNoUI"
-        "ReadOnlyReplica"
-      ];
+      package = lib.mkOption {
+        description = "KanIDM package version";
+        type = lib.types.package;
+        default = "pkgs.kanidm_1_8";
+      };
+      role = lib.mkOption {
+        description = "The role of this server. This affects the replication relationship and thereby available features.";
+        default = "WriteReplica";
+        type = lib.types.enum [
+          "WriteReplica"
+          "WriteReplicaNoUI"
+          "ReadOnlyReplica"
+        ];
+      };
     };
   };
 
   config =
     let
-      cfg-domain = config.domain;
-      cfg-package = config.package;
-      cfg-role = config.role;
+      cfg-domain = config.kanidm-block.options.domain;
+      cfg-package = config.kanidm-block.options.package;
+      cfg-role = config.kanidm-block.options.role;
     in
     {
       # enable kanidm service with config

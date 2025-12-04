@@ -1,6 +1,6 @@
 # KanIDM Identity Provider
 
 ## Options:
-- domain
-- package
-- role
+  - kanidm-block.options.domain
+  - kanidm-block.options.package
+  - kanidm-block.options.role

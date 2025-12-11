@@ -8,7 +8,8 @@
   imports = [ ./acme.nix ];
 
   options = {
-    kanidm-block.options = {
+    # TODO: add enable/disable
+    nixos-blocks.kanidm.options = {
       domain = {
         top-level = lib.mkOption {
           description = "Top level domain on which kanidm will work";
@@ -35,9 +36,9 @@
 
   config =
     let
-      cfg-domain = config.kanidm-block.options.domain.top-level;
-      cfg-package = config.kanidm-block.options.package;
-      cfg-role = config.kanidm-block.options.role;
+      cfg-domain = config.nixos-blocks.kanidm.options.domain.top-level;
+      cfg-package = config.nixos-blocks.kanidm.options.package;
+      cfg-role = config.nixos-blocks.kanidm.options.role;
     in
     {
       # enable kanidm service with config

@@ -5,9 +5,9 @@
 One can use the `kanidm-block` options as follows:
 
 ``` nix
-kanidm-block.options.domain.top-level = "domain.tld";
-kanidm-block.options.package = pkgs.kanidm_1_8;
-kanidm-block.options.role = "WriteReplica";
+nixos-blocks.kanidm.options.domain.top-level = "domain.tld";
+nixos-blocks.kanidm.options.package = pkgs.kanidm_1_8;
+nixos-blocks.kanidm.options.role = "WriteReplica";
 ```
 
 This will spin up an KanIDM instance that is accessible on

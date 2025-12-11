@@ -27,3 +27,19 @@ example-block.options.domain = "domain.tld";
 example-block.options.package = pkgs.package;
 example-block.options.string = "foo";
 ```
+
+## Naming of options
+
+The naming convention is as follows:
+
+A block always needs an enable option like so:
+
+``` nix
+nixos-blocks.<block-name>.enable = true;
+```
+
+Next the options can be defined like:
+
+``` nix
+nixos-blocks.<block-name>.options.<option-name> = "option";
+```

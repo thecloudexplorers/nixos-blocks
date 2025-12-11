@@ -2,7 +2,7 @@
 {
   config =
     let
-      cfg-domain = config.kanidm-block.options.domain.top-level;
+      cfg-domain = config.nixos-blocks.kanidm.options.domain.top-level;
     in
     {
       security.acme = {

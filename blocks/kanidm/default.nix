@@ -85,6 +85,7 @@
       services.kanidm = {
         enableServer = cfg-server-enable;
         enableClient = cfg-client-enable;
+        enablePam = cfg-client-enable;
         package = lib.mkForce cfg-package;
         serverSettings = {
           domain = cfg-domain;

@@ -38,13 +38,13 @@
         };
         posix-group-prefix = lib.mkOption {
           description = "The common prefix you've given your POSIX-enabled groups. e.g. users would become posix_users if you'd enter posix_ here";
-          type = lib.types.nullOr lib.types.str;
-          default = null;
+          type = lib.types.str;
+          default = "";
         };
         posix-group-suffix = lib.mkOption {
           description = "The common suffix you've given your POSIX-enabled groups. e.g. users would become users_posix if you'd enter _posix here";
-          type = lib.types.nullOr lib.types.str;
-          default = null;
+          type = lib.types.str;
+          default = "";
         };
         local-account-override = lib.mkOption {
           description = "If you've specified local accounts to enable home manager, add them here to allow override by kanidm";

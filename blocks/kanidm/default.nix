@@ -33,7 +33,7 @@
         };
         posix-group = lib.mkOption {
           description = "Your kanidm POSIX group to allow for local logins";
-          type = lib.types.str;
+          type = lib.types.listOf lib.types.str;
           default = "posix-users";
         };
         posix-group-prefix = lib.mkOption {

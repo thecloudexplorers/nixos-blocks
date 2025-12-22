@@ -43,3 +43,5 @@ Next the options can be defined like:
 ``` nix
 nixos-blocks.<block-name>.options.<option-name> = "option";
 ```
+
+All options are referenced in [OPTIONS.md](OPTIONS.md).

@@ -31,10 +31,10 @@
           default = false;
           type = lib.types.bool;
         };
-        posix-group = lib.mkOption {
-          description = "Your kanidm POSIX group to allow for local logins";
+        posix-groups = lib.mkOption {
+          description = "Your kanidm POSIX group(s) to allow for local logins";
           type = lib.types.listOf lib.types.str;
-          default = "posix-users";
+          default = [ "posix-users" ];
         };
         posix-group-prefix = lib.mkOption {
           description = "The common prefix you've given your POSIX-enabled groups. e.g. users would become posix_users if you'd enter posix_ here";
@@ -49,7 +49,7 @@
         local-account-override = lib.mkOption {
           description = "If you've specified local accounts to enable home manager, add them here to allow override by kanidm";
           type = lib.types.listOf lib.types.str;
-          default = "";
+          default = [ ];
         };
       };
       domain = {
@@ -72,7 +72,7 @@
       cfg-server-enable = config.nixos-blocks.kanidm.options.server.enable;
       cfg-server-role = config.nixos-blocks.kanidm.options.role;
       cfg-client-enable = config.nixos-blocks.kanidm.options.client.enable;
-      cfg-client-posix-group = config.nixos-blocks.kanidm.options.client.posix-group;
+      cfg-client-posix-groups = config.nixos-blocks.kanidm.options.client.posix-groups;
       cfg-client-posix-group-prefix = config.nixos-blocks.kanidm.options.client.posix-group-prefix;
       cfg-client-posix-group-suffix = config.nixos-blocks.kanidm.options.client.posix-group-suffix;
       cfg-client-local-account-override =
@@ -103,7 +103,7 @@
           conn_timeout = 3;
           cache_timeout = 60;
           hsm_type = "tpm_if_possible";
-          pam_allowed_login_groups = cfg-client-posix-group;
+          pam_allowed_login_groups = cfg-client-posix-groups;
           version = "2";
           default_shell = "${pkgs.zsh}/bin/zsh";
           home_prefix = "/home/";
@@ -113,7 +113,7 @@
           gid_attr_map = "name";
           allow_local_account_override = cfg-client-local-account-override;
           kanidm = {
-            pam_allowed_login_groups = cfg-client-posix-group;
+            pam_allowed_login_groups = cfg-client-posix-groups;
             map_group = [
               {
                 local = "users";

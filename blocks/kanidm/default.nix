@@ -48,8 +48,8 @@
         };
         local-account-override = lib.mkOption {
           description = "If you've specified local accounts to enable home manager, add them here to allow override by kanidm";
-          type = lib.types.nullOr lib.types.listOf lib.types.str;
-          default = null;
+          type = lib.types.listOf lib.types.str;
+          default = "";
         };
       };
       domain = {

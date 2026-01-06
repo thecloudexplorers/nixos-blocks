@@ -70,7 +70,7 @@
   config =
     let
       cfg-server-enable = config.nixos-blocks.kanidm.options.server.enable;
-      cfg-server-role = config.nixos-blocks.kanidm.options.role;
+      cfg-server-role = config.nixos-blocks.kanidm.options.server.role;
       cfg-client-enable = config.nixos-blocks.kanidm.options.client.enable;
       cfg-client-posix-groups = config.nixos-blocks.kanidm.options.client.posix-groups;
       cfg-client-posix-group-prefix = config.nixos-blocks.kanidm.options.client.posix-group-prefix;

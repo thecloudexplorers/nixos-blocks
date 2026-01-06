@@ -155,12 +155,6 @@
         kanidm
       ];
 
-      # make sure the certs are there before kanidm starts
-      systemd.services.kanidm = {
-        wants = [ "acme-login.${cfg-domain}.service" ];
-        after = [ "acme-login.${cfg-domain}.service" ];
-      };
-
       # make acme certificates accessible by kanidm
       security.acme.defaults.group = "certs";
       users.groups.certs.members = [ "kanidm" ];

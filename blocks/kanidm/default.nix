@@ -151,8 +151,8 @@
         443
       ];
 
-      environment.systemPackages = with pkgs; [
-        kanidm
+      environment.systemPackages = [
+        cfg-package
       ];
 
       # make acme certificates accessible by kanidm

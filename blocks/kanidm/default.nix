@@ -103,7 +103,6 @@
           conn_timeout = 3;
           cache_timeout = 60;
           hsm_type = "tpm_if_possible";
-          pam_allowed_login_groups = cfg-client-posix-groups;
           version = "2";
           default_shell = "${pkgs.zsh}/bin/zsh";
           home_prefix = "/home/";

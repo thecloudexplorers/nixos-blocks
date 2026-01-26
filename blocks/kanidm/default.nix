@@ -139,6 +139,10 @@
                 local = "podman";
                 "with" = "${cfg-client-posix-group-prefix}podman${cfg-client-posix-group-suffix}@${cfg-domain}";
               }
+              {
+                local = "dialout";
+                "with" = "${cfg-client-posix-group-prefix}dialout${cfg-client-posix-group-suffix}@${cfg-domain}";
+              }
             ];
           };
         };

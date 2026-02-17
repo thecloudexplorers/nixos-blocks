@@ -83,11 +83,9 @@
     {
       # enable kanidm service with config
       services.kanidm = {
-        enableServer = cfg-server-enable;
-        enableClient = cfg-client-enable;
-        enablePam = cfg-client-enable;
         package = lib.mkForce cfg-package;
-        serverSettings = {
+        server.eable = cfg-server-enable;
+        server.settings = {
           domain = cfg-domain;
           origin = "https://login.${cfg-domain}";
           tls_key = "/var/lib/acme/login.${cfg-domain}/key.pem";
@@ -96,10 +94,12 @@
           ldapbindaddress = "[::]:636";
           bindaddress = "[::]:443";
         };
-        clientSettings = {
+        client.enable = cfg-client-enable;
+        client.settings = {
           uri = "https://login.${cfg-domain}";
         };
-        unixSettings = {
+        unix.enable = cfg-client-enable;
+        unix.settings = {
           conn_timeout = 3;
           cache_timeout = 60;
           hsm_type = "tpm_if_possible";
